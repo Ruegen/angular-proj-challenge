@@ -12,9 +12,12 @@ function appRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
       controller: "SearchController",
       controllerAs: "vm",
       resolve: {
-        users: function(userState) {
-          return userState.all()
-        }
+        users: [
+          "userState",
+          function(userState) {
+            return userState.all()
+          }
+        ]
       }
     })
     .state("selected", {
@@ -23,9 +26,12 @@ function appRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
       controller: "SelectedController",
       controllerAs: "vm",
       resolve: {
-        users: function(userState) {
-          return userState.allSelected()
-        }
+        users: [
+          "userState",
+          function(userState) {
+            return userState.allSelected()
+          }
+        ]
       }
     })
 
