@@ -1,9 +1,9 @@
 import angular from "angular"
 import uiRouter from "angular-ui-router"
 
-import utilDirective from "./utils/util.directive"
-import UserService from "./components/users/user.service"
-import UserFactory from "./components/users/user.factory"
+import ngEnter from "./utils/ng-enter.directive"
+import userAPI from "./components/users/user-api.service"
+import userState from "./components/users/user-state.factory"
 
 // layouts
 import SearchController from "./layout/search.controller"
@@ -23,8 +23,8 @@ angular
         controller: "SearchController",
         controllerAs: "vm",
         resolve: {
-          users: function(UserState) {
-            return UserState.all()
+          users: function(userState) {
+            return userState.all()
           }
         }
       })
@@ -34,8 +34,8 @@ angular
         controller: "SelectedController",
         controllerAs: "vm",
         resolve: {
-          users: function(UserState) {
-            return UserState.allSelected()
+          users: function(userState) {
+            return userState.allSelected()
           }
         }
       })
@@ -43,9 +43,9 @@ angular
     $urlRouterProvider.otherwise("/")
     $locationProvider.html5Mode({ enabled: true, requireBase: false })
   })
-  .factory("UserState", UserFactory)
-  .service("UserService", UserService)
-  .directive("ngEnter", utilDirective)
+  .factory("userState", userState)
+  .service("userAPI", userAPI)
+  .directive("ngEnter", ngEnter)
   .controller("SearchController", SearchController)
   .controller("SelectedController", SelectedController)
   .component("userList", {

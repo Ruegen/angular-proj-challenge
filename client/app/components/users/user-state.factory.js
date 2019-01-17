@@ -1,5 +1,5 @@
-export default function UserState(UserService) {
-  let users = UserService.fetchUsers()
+export default function userState(userAPI) {
+  const users = userAPI.fetchUsers()
 
   const service = {
     all,

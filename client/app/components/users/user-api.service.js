@@ -10,12 +10,12 @@ const sortUsersByFirstName = users => {
   })
 }
 
-export default function UserService($http, $q) {
-  const uri = "http://localhost:1234/"
-  const usersUrl = uri + "user-list.json"
-  const userAvatarsUrl = uri + "user-avatar.json"
-
+export default function userService($http, $q) {
   this.fetchUsers = function() {
+    const uri = "http://localhost:1234/"
+    const usersUrl = uri + "user-list.json"
+    const userAvatarsUrl = uri + "user-avatar.json"
+
     const users = $q
       .all([
         $http.get(usersUrl).then(response => response.data),
