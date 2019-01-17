@@ -19,6 +19,8 @@ There's a lot to read through that so it will a bit more time to fully work thro
 
 It recommended router-ui so I used it.
 
+I created two branches, the original I mutate the user with additional information (checked) where as the other I keep track of the ids selected and then compare the two arrays. I created a selected branch if you want to see another way of achieving the same outcome.
+
 Happy to rebuild this with tests and git flow on request.
 
 ## folder setup
