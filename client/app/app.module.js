@@ -15,7 +15,7 @@ import UserListController from "./components/users/user-list.controller"
 import UserDetailController from "./components/users/user-detail.controller"
 
 angular
-  .module("app", [uiRouter])
+  .module("app", ["ui.router", uiRouter])
   .config(appRoutes)
   .factory("userState", userState)
   .service("userAPI", userAPI)
