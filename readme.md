@@ -17,7 +17,7 @@ https://github.com/johnpapa/angular-styleguide
 
 There's a lot to read through that so it will a bit more time to fully work through all the guide.
 
-It recommended router-ui so I did the same.
+It recommended router-ui so I used it.
 
 Happy to rebuild this with tests and git flow on request.
 
