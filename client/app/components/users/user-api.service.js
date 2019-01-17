@@ -14,15 +14,18 @@ userService.$inject = ["$http", "$q"]
 
 export default function userService($http, $q) {
   this.fetchUsers = function() {
-    const uri = "http://localhost:1234/"
-    const usersUrl = uri + "user-list.json"
-    const userAvatarsUrl = uri + "user-avatar.json"
+    const usersUrl = "/user-list.json"
+    const userAvatarsUrl = "/user-avatar.json"
 
     const users = $q
       .all([
         $http.get(usersUrl).then(response => response.data),
         $http.get(userAvatarsUrl).then(response => response.data)
       ])
+      .catch(err => {
+        // no error handling just throwing
+        throw new Error(err.message)
+      })
       .then(([users, avatars]) => {
         return users.map(user => {
           const { avatar } = avatars.find(a => a.id === user.id)

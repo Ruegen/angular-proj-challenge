@@ -15,7 +15,7 @@ function appRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
         users: [
           "userState",
           function(userState) {
-            return userState.all()
+            return userState.all() || []
           }
         ]
       }
@@ -29,7 +29,7 @@ function appRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
         users: [
           "userState",
           function(userState) {
-            return userState.allSelected()
+            return userState.allSelected() || []
           }
         ]
       }
