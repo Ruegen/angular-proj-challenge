@@ -1,16 +1,13 @@
-export default function UserListController() {
+UserListController.$inject = ["userState"]
+
+export default function UserListController(userState) {
   const vm = this
 
-  vm.select = function(id) {
-    if (!vm.checkable) {
-      return
-    }
+  vm.isSelected = function(id) {
+    return userState.getSelection().indexOf(id) !== -1 ? true : false
+  }
 
-    vm.users = vm.users.map(user => {
-      if (user.id == id) {
-        user.checked = !user.checked
-      }
-      return user
-    })
+  vm.select = function(id) {
+    userState.toggleSelection(id)
   }
 }

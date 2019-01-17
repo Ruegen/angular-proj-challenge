@@ -1,24 +1,21 @@
-SearchController.$inject = ["$state", "users"]
+SearchController.$inject = ["$state", "users", "userState"]
 
-export default function SearchController($state, users) {
+export default function SearchController($state, users, userState) {
   const vm = this
   vm.search = ""
   vm.users = users.filter(user => user.full_name.includes(vm.search))
 
   // functions
   vm.go = function(path) {
-    const selectedUsers = vm.users.filter(user => user.checked)
-    if (selectedUsers.length > 0) {
+    if (userState.getSelection().length > 0) {
       $state.go(path.replace("/", ""))
     }
   }
 
   vm.clearSelected = function() {
     vm.search = ""
-    vm.users = users.map(user => {
-      user.checked = false
-      return user
-    })
+    userState.clearSelection()
+    vm.users = users
   }
 
   vm.searchUsers = function() {

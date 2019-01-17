@@ -1,16 +1,13 @@
-SelectedController.$inject = ["$state", "users"]
+SelectedController.$inject = ["$state", "users", "userState"]
 
-export default function SelectedController($state, users) {
+export default function SelectedController($state, users, userState) {
   const vm = this
   vm.users = users
 
   //functions
   vm.clearSelected = function() {
     vm.search = ""
-    vm.users = users.map(user => {
-      user.checked = false
-      return user
-    })
+    userState.clearSelection()
     $state.go("search")
   }
 }

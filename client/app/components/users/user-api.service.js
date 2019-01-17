@@ -30,7 +30,6 @@ export default function userService($http, $q) {
         return users.map(user => {
           const { avatar } = avatars.find(a => a.id === user.id)
           user.avatar = avatar
-          user.checked = false
           return user
         })
       })

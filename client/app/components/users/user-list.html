@@ -2,6 +2,7 @@
   <p ng-hide="vm.users.length">No users found</p>
   <user-detail
     select="vm.select"
+    checked="vm.isSelected"
     checkable="vm.checkable"
     user="user"
     ng-repeat="user in vm.users track by user.id"

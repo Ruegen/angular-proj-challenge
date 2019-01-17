@@ -36,6 +36,7 @@ angular
     bindings: {
       user: "<",
       select: "=?",
+      checked: "<",
       checkable: "<?"
     },
     controller: UserDetailController,
