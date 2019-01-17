@@ -1,6 +1,7 @@
 import angular from "angular"
 import uiRouter from "angular-ui-router"
 
+import appRoutes from "./app-routes.config"
 import ngEnter from "./utils/ng-enter.directive"
 import userAPI from "./components/users/user-api.service"
 import userState from "./components/users/user-state.factory"
@@ -15,34 +16,7 @@ import UserDetailController from "./components/users/user-detail.controller"
 
 angular
   .module("app", [uiRouter])
-  .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-    $stateProvider
-      .state("search", {
-        url: "/",
-        templateUrl: "search.html",
-        controller: "SearchController",
-        controllerAs: "vm",
-        resolve: {
-          users: function(userState) {
-            return userState.all()
-          }
-        }
-      })
-      .state("selected", {
-        url: "/selected",
-        templateUrl: "selected.html",
-        controller: "SelectedController",
-        controllerAs: "vm",
-        resolve: {
-          users: function(userState) {
-            return userState.allSelected()
-          }
-        }
-      })
-
-    $urlRouterProvider.otherwise("/")
-    $locationProvider.html5Mode({ enabled: true, requireBase: false })
-  })
+  .config(appRoutes)
   .factory("userState", userState)
   .service("userAPI", userAPI)
   .directive("ngEnter", ngEnter)

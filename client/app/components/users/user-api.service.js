@@ -10,6 +10,8 @@ const sortUsersByFirstName = users => {
   })
 }
 
+userService.$inject = ["$http", "$q"]
+
 export default function userService($http, $q) {
   this.fetchUsers = function() {
     const uri = "http://localhost:1234/"

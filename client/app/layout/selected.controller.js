@@ -1,4 +1,6 @@
-export default function SelectedController(users, $state) {
+SelectedController.$inject = ["$state", "users"]
+
+export default function SelectedController($state, users) {
   const vm = this
   vm.users = users
 

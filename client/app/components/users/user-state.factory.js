@@ -1,3 +1,5 @@
+userState.$inject = ["userAPI"]
+
 export default function userState(userAPI) {
   const users = userAPI.fetchUsers()
 

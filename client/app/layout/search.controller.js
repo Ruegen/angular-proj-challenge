@@ -1,4 +1,6 @@
-export default function SearchController(users, $state) {
+SearchController.$inject = ["$state", "users"]
+
+export default function SearchController($state, users) {
   const vm = this
   vm.search = ""
   vm.users = users.filter(user => user.full_name.includes(vm.search))
