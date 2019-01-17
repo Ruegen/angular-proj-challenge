@@ -43,7 +43,7 @@ Happy to rebuild this with tests and git flow on request.
 
 ## api
 
-User service that fetches both json files as and returns them as one promise (using `$q.all`) and then returns the users and users avatars. I then map each user to their avatar and append the avatar. Finally I sort them alphabetically.
+User service that fetches both json files as and returns them as one promise (using `$q.all`) and then returns the users and users avatars. I then map each user to their avatar and append the avatar. Finally I sort them alphabetically. I figured this would be a better approach as I didn't want to make extra api calls for the avatars as that would tax the server in a real world scenario.
 
 # ui-router
 
