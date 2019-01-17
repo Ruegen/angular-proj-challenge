@@ -1,0 +1,13 @@
+<button
+  ng-class="{'list-group-item-success cust-text-dark' : vm.user.checked && vm.checkable }"
+  class="list-group-item cust-sharp"
+  ng-click="vm.select(vm.user.id)"
+>
+  <img
+    width="40px"
+    class="img-circle"
+    src="{{ vm.user.avatar }}"
+    alt="user avatar"
+  />
+  <span class="cust-align-top"> {{ vm.user.full_name }}</span>
+</button>

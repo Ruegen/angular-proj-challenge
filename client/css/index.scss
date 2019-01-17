@@ -1,0 +1,63 @@
+$brand-primary: #4291f0 !default; // #337ab7
+$brand-success: #00d822 !default;
+// d7fado
+
+@import "bootstrap";
+
+// overrides
+button.list-group-item-success {
+  color: black;
+  &:hover,
+  &:target,
+  &:focus,
+  &:active,
+  &:visited {
+    color: black;
+  }
+}
+
+button:focus {
+  outline: none;
+}
+
+// custom classes
+
+.cust-text-dark {
+  color: $gray-dark;
+}
+
+.btn.cust-sharp {
+  border-radius: 0;
+}
+
+.cust-btn-circle {
+  margin-top: 8px;
+  padding: 0;
+  border-radius: 50%;
+  outline: none;
+}
+
+.cust-btn-circle:focus {
+  outline: none;
+}
+
+.cust-glyphicon-primary {
+  color: $brand-primary;
+  font-size: 1.2em;
+}
+
+.list-group-item.cust-sharp {
+  border-radius: 0;
+}
+
+.form-control.cust-sharp {
+  border-radius: 0;
+}
+
+.cust-list-group-overflow {
+  max-height: 490px;
+  min-height: 490px;
+  margin-bottom: 10px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}

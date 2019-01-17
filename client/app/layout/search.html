@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-md-6">
+    <h4 class="text-primary pull-left">SELECT USERS</h4>
+    <button
+      ng-click="vm.clearSelected()"
+      class="btn btn-outline btn-lg pull-right cust-btn-circle"
+    >
+      <span
+        class="glyphicon glyphicon-remove-circle cust-glyphicon-primary pull-right"
+        aria-hidden="true"
+      ></span>
+    </button>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <p ng-show="list">Loading...</p>
+
+    <div class="input-group">
+      <input
+        type="text"
+        ng-enter="vm.searchUsers()"
+        ng-change="vm.searchUsers()"
+        ng-model="vm.search"
+        class="form-control cust-sharp"
+        placeholder="Search ..."
+      />
+
+      <span class="input-group-btn">
+        <button
+          ng-click="vm.searchUsers()"
+          class="btn btn-primary cust-sharp"
+          type="button"
+        >
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </button>
+      </span>
+    </div>
+
+    <br />
+    <user-list checkable="true" users="vm.users"></user-list>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="pull-right">
+      <button
+        ng-click="vm.clearSelected()"
+        class="btn btn-default btn-md cust-sharp"
+      >
+        Cancel
+      </button>
+      <button
+        ng-click="vm.go('/selected')"
+        class="btn btn-success btn-md cust-sharp"
+      >
+        Select
+      </button>
+    </div>
+  </div>
+</div>

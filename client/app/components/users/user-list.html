@@ -1,0 +1,9 @@
+<div class="list-group cust-list-group-overflow">
+  <p ng-hide="vm.users.length">No users found</p>
+  <user-detail
+    select="vm.select"
+    checkable="vm.checkable"
+    user="user"
+    ng-repeat="user in vm.users track by user.id"
+  ></user-detail>
+</div>

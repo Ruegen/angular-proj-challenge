@@ -1,0 +1,31 @@
+{
+  "name": "vortilla",
+  "version": "1.0.0",
+  "description": "Users picker",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel client/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.21",
+    "angular": "^1.7.5",
+    "angular-ui-router": "^1.0.20",
+    "parcel-plugin-static-files-copy": "^2.0.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.11.0",
+    "sass": "^1.16.0"
+  },
+  "staticFiles": {
+    "staticPath": [
+      "client/app/layout",
+      "client/app/components",
+      "client/data"
+    ],
+    "watcherGlob": "**"
+  }
+}
