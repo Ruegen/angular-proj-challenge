@@ -2,7 +2,7 @@
 
 ## working online example
 
-[link to example](http://)
+[link to example](https://angularjs-proj.netlify.com)
 
 ## to get it running locally
 
