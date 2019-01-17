@@ -2,6 +2,7 @@
   <div class="col-md-6">
     <h4 class="text-primary pull-left">SELECT USERS</h4>
     <button
+      aria-label="clear selected"
       ng-click="vm.clearSelected()"
       class="btn btn-outline btn-lg pull-right cust-btn-circle"
     >
@@ -21,6 +22,7 @@
 
     <div class="input-group">
       <input
+        aria-label="search users"
         type="text"
         ng-enter="vm.searchUsers()"
         ng-change="vm.searchUsers()"
@@ -31,6 +33,7 @@
 
       <span class="input-group-btn">
         <button
+          aria-label="search users"
           ng-click="vm.searchUsers()"
           class="btn btn-primary cust-sharp"
           type="button"
